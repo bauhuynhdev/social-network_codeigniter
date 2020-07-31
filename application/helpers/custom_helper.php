@@ -31,3 +31,14 @@ if (!function_exists('view')) {
         $ci->load->view($view, $vars, $return);
     }
 }
+
+if (!function_exists('session')) {
+    /**
+     * @return CI_Session
+     */
+    function session()
+    {
+        $ci =& get_instance();
+        return $ci->session;
+    }
+}

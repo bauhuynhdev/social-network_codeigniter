@@ -10,7 +10,5 @@ class MY_Controller extends CI_Controller
         $this->data['page'] = 'welcome_message';
 
         parent::__construct();
-
-        $this->load->helper('form');
     }
 }

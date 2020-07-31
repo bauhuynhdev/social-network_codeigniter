@@ -1,15 +1,9 @@
 <?php
 
 
-class Post_model extends CI_Model
+class Post_model extends MY_Model
 {
     protected $table = 'posts';
-
-    public function __construct()
-    {
-        $this->load->database();
-        parent::__construct();
-    }
 
     public function getAll()
     {
