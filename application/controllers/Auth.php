@@ -49,7 +49,7 @@ class Auth extends MY_Controller
         if ($params = $this->input->post()) {
             $validator = validator();
             $validator->set_rules('name', 'Full name', 'required');
-            $validator->set_rules('email', 'Email address', 'required');
+            $validator->set_rules('email', 'Email address', 'required|unique');
             $validator->set_rules('password', 'Password', 'required');
             $validator->set_rules('password_confirm', 'Confirm password', 'required');
 

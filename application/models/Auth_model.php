@@ -24,10 +24,25 @@ class Auth_model extends MY_Model
         $name = $this->db->escape($params['name']);
         $email = $this->db->escape($params['email']);
         $password = $this->db->escape(password_hash($params['password'], PASSWORD_BCRYPT));
-
         $sql = "INSERT INTO users (name, email, password) VALUES ({$name}, {$email}, {$password})";
         $this->db->query($sql);
 
         return true;
+    }
+
+    public function find($id)
+    {
+        $id = $this->db->escape($id);
+        $sql = "SELECT * FROM users WHERE id = {$id}";
+
+        return $this->db->query($sql)->row_array();
+    }
+
+    public function findBy($name, $var)
+    {
+        $var = $this->db->escape($var);
+        $sql = "SELECT * FROM users WHERE {$name} = {$var}";
+
+        return $this->db->query($sql)->row_array();
     }
 }
