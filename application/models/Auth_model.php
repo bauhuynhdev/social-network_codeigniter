@@ -18,4 +18,16 @@ class Auth_model extends MY_Model
         session()->set_userdata(SESSION, $user);
         return true;
     }
+
+    public function register($params)
+    {
+        $name = $this->db->escape($params['name']);
+        $email = $this->db->escape($params['email']);
+        $password = $this->db->escape(password_hash($params['password'], PASSWORD_BCRYPT));
+
+        $sql = "INSERT INTO users (name, email, password) VALUES ({$name}, {$email}, {$password})";
+        $this->db->query($sql);
+
+        return true;
+    }
 }

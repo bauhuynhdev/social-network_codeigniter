@@ -93,6 +93,7 @@ defined('EXIT__AUTO_MAX') or define('EXIT__AUTO_MAX', 125); // highest automatic
 
 defined('SESSION') or define('SESSION', '?Xds$:"}mn5b>~;yf5/cFUsdUd6Dk4h7q]9eQ]3Js<k\'>uAEVE_pd{r}<Zn_+`#qD');
 defined('FORM_ERRORS') or define('FORM_ERRORS', 'flash_form_error');
+defined('FORM_KEEP_DATA') or define('FORM_KEEP_DATA', 'flash_form_keep_data');
 defined('NOTIFY') or define('NOTIFY', 'flash_notify');
 defined('NOTIFY_SPACE') or define(
     'NOTIFY_SPACE',

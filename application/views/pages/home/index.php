@@ -13,10 +13,28 @@
                                aria-describedby="basic-addon1">
                     </div>
                 </form>
-                <div class="login">
-                    <a href="/auth/login" class="btn btn-primary">
-                        <i class="fa fa-user" aria-hidden="true"></i> Login
-                    </a>
+                <div class="user">
+                    <?php
+                    if (auth()) { ?>
+                        <div class="dropdown">
+                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?php
+                                echo auth()['name'] ?>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="<?php
+                                echo site_url('auth/logout') ?>">Logout</a>
+                            </div>
+                        </div>
+                    <?php
+                    } else { ?>
+                        <a href="/auth/login" class="btn btn-primary">
+                            <i class="fa fa-user" aria-hidden="true"></i> Login
+                        </a>
+                    <?php
+                    } ?>
                 </div>
             </div>
         </div>

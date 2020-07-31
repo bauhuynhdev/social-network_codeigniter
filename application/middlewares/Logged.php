@@ -5,8 +5,8 @@ class Logged
 {
     public function handle()
     {
-        if ( ! session()->has_userdata(SESSION)) {
-            redirect('auth/login');
+        if (session()->has_userdata(SESSION)) {
+            redirect('/');
         }
     }
 }

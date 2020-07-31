@@ -91,3 +91,40 @@ if ( ! function_exists('flash_error')) {
         session()->set_flashdata(NOTIFY, sprintf('%s%s%s', 'error', NOTIFY_SPACE, $message));
     }
 }
+
+if ( ! function_exists('auth')) {
+    function auth()
+    {
+        if (session()->has_userdata(SESSION)) {
+            return session()->userdata(SESSION);
+        }
+
+        return null;
+    }
+}
+
+if ( ! function_exists('set_form_errors')) {
+    function set_form_errors($var)
+    {
+        session()->set_flashdata(FORM_ERRORS, $var);
+    }
+}
+
+if ( ! function_exists('set_form_keep_data')) {
+    function set_form_keep_data($var)
+    {
+        session()->set_flashdata(FORM_KEEP_DATA, $var);
+    }
+}
+
+if ( ! function_exists('value')) {
+    function value($var)
+    {
+        $params = session()->flashdata(FORM_KEEP_DATA);
+        if (isset($params[$var])) {
+            return $params[$var];
+        }
+
+        return null;
+    }
+}
