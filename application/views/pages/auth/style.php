@@ -1,6 +1,7 @@
 <style>
     html, body {
         height: 100%;
+        background-color: #eeeeee;
     }
 
     .form-signin {
