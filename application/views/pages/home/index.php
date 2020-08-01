@@ -2,14 +2,14 @@
     <div class="bg-dark py-2">
         <div class="container">
             <div class="d-flex">
-                <form class="form-inline mr-auto">
+                <form class="form-inline mr-auto" method="get" action="">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Keyword" aria-label="Username"
+                        <input value="<?php echo $this->input->get('s') ?>" type="text" class="form-control" name="s" placeholder="Keyword" aria-label="Keyword"
                                aria-describedby="basic-addon1">
                     </div>
                 </form>
