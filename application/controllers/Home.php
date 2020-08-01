@@ -12,7 +12,7 @@ class Home extends MY_Controller
     {
         $this->load->model('post_model');
         $this->data['title'] = 'Home';
-        $this->data['posts'] = $this->post_model->getAll();
+        $this->data['posts'] = $this->post_model->paginate();
         $this->data['page'] = 'pages/home/index';
 
         view('layout', $this->data);

@@ -43,9 +43,10 @@
 <main role="main" class="mt-2">
     <div class="container">
         <?php
-        foreach ($posts as $post) {
+        foreach ($posts['items'] as $post) {
             view('components/card-box', array('post' => $post));
         }
         ?>
+        <?php echo $posts['paginate'] ?>
     </div>
 </main>
